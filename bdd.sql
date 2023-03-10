@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 DROP TABLE IF EXISTS `like_dislikearticles`;
 CREATE TABLE IF NOT EXISTS `like_dislikearticles` (
   `Id_Like_DislikeArticles` int NOT NULL AUTO_INCREMENT,
-  `type` tinyint(1) DEFAULT NULL,
+  `type` tinyInt(1) DEFAULT NULL, 
   `Id_Utilisateur` int NOT NULL,
   `Id_Articles` int NOT NULL,
   PRIMARY KEY (`Id_Like_DislikeArticles`),
