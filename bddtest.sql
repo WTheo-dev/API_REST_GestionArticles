@@ -1,14 +1,16 @@
-INSERT INTO Rôle (id1_moderator, id2_publisher)
-VALUES ('JohnModerator', 'JanePublisher');
+INSERT INTO Role (Description) VALUES ('Moderator');
+INSERT INTO Role (Description) VALUES ('Publisher');
 
-INSERT INTO Utilisateur (nomUtilisateur, motdepasse, Id_Rôle)
-VALUES ('JaneDoe', 'motdepasse', 1);
+INSERT INTO Utilisateur (nomUtilisateur, motdepasse, Id_Role) VALUES ('moderator', 'password1', 1);
+INSERT INTO Utilisateur (nomUtilisateur, motdepasse, Id_Role) VALUES ('publisher', 'password2', 2);
 
-INSERT INTO Articles (titre, Contenu, date_de_publication, nbLike, nbDislike, Id_Utilisateur)
-VALUES ('Nouvelles tendances de la mode', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar tincidunt sapien, et rhoncus nunc bibendum ac. Quisque maximus ligula purus, nec ultrices ex consequat vitae. ', '2023-03-10', 10, 2, 1);
+INSERT INTO Articles (titre, Contenu, date_de_publication, Id_Utilisateur) VALUES ('Bienvenue sur notre site', 'Bienvenue sur notre site web !', '2022-01-01', 1);
+INSERT INTO Articles (titre, Contenu, date_de_publication, Id_Utilisateur) VALUES ('Comment utiliser phpMyAdmin', 'Voici un tutoriel pour phpMyAdmin', '2022-01-02', 2);
+INSERT INTO Articles (titre, Contenu, date_de_publication, Id_Utilisateur) VALUES ('Les dernières tendances', 'Voici les dernières tendances en 2022', '2022-01-03', 1);
 
-INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles)
-VALUES (1, 1, 1); -- utilisateur JaneDoe a aimé l'article
-
-INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles)
-VALUES (0, 2, 1); -- utilisateur JohnDoe a pas aimé l'article
+INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles) VALUES ('like', 1, 1);
+INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles) VALUES ('like', 2, 1);
+INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles) VALUES ('like', 1, 2);
+INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles) VALUES ('dislike', 2, 2);
+INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles) VALUES ('like', 1, 3);
+INSERT INTO Like_DislikeArticles (type, Id_Utilisateur, Id_Articles) VALUES ('dislike', 2, 3);
