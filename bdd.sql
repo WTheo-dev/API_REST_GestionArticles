@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 10 mars 2023 à 10:26
+-- Généré le : ven. 10 mars 2023 à 10:36
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -33,8 +33,6 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `titre` varchar(50) DEFAULT NULL,
   `Contenu` text,
   `date_de_publication` date DEFAULT NULL,
-  `nbLike` int DEFAULT NULL,
-  `nbDislike` int DEFAULT NULL,
   `Id_Utilisateur` int NOT NULL,
   PRIMARY KEY (`Id_Articles`),
   KEY `Id_Utilisateur` (`Id_Utilisateur`)
@@ -60,15 +58,14 @@ CREATE TABLE IF NOT EXISTS `like_dislikearticles` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `rôle`
+-- Structure de la table `role`
 --
 
-DROP TABLE IF EXISTS `rôle`;
-CREATE TABLE IF NOT EXISTS `rôle` (
-  `Id_Rôle` int NOT NULL AUTO_INCREMENT,
-  `id1_moderator` varchar(50) DEFAULT NULL,
-  `id2_publisher` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`Id_Rôle`)
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE IF NOT EXISTS `role` (
+  `Id_Role` int NOT NULL AUTO_INCREMENT,
+  `Description` text,
+  PRIMARY KEY (`Id_Role`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -82,9 +79,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `Id_Utilisateur` int NOT NULL AUTO_INCREMENT,
   `nomUtilisateur` varchar(50) DEFAULT NULL,
   `motdepasse` varchar(50) DEFAULT NULL,
-  `Id_Rôle` int NOT NULL,
+  `Id_Role` int NOT NULL,
   PRIMARY KEY (`Id_Utilisateur`),
-  KEY `Id_Rôle` (`Id_Rôle`)
+  KEY `Id_Role` (`Id_Role`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
