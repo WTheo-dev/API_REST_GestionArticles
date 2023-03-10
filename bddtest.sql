@@ -3,9 +3,12 @@ INSERT INTO role (Id_Role, Description) VALUES
 (2, 'Publisher');
 
 INSERT INTO utilisateur (Id_Utilisateur, nomUtilisateur, motdepasse, Id_Role) VALUES
-(1, 'user1', 'password1', 1),
-(2, 'user2', 'password2', 2),
-(3, 'user3', 'password3', 1);
+(1, 'Alice', 'password1', 1),
+(2, 'Jacques', 'password2', 2),
+(3, 'Louis', 'password3', 1),
+(4, 'Jean', 'password4', 1)
+(5, 'Louise', 'password5'2)
+(6, 'Elise', 'password6',2);
 
 INSERT INTO articles (Id_Articles, titre, Contenu, date_de_publication, Id_Utilisateur) VALUES
 (1, 'Titre de l''article 1', 'Contenu de l''article 1', '2022-01-01', 1),
