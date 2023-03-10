@@ -13,12 +13,12 @@ INSERT INTO articles (Id_Articles, titre, Contenu, date_de_publication, Id_Utili
 (3, 'Titre de l''article 3', 'Contenu de l''article 3', '2022-03-03', 3);
 
 INSERT INTO like_dislikearticles (Id_Like_DislikeArticles, type, Id_Utilisateur, Id_Articles) VALUES
-(1, 1, 1, 1),
-(2, 1, 2, 1),
-(3, 0, 3, 1),
-(4, 1, 1, 2),
+(1, 2, 1, 1),
+(2, 2, 2, 1),
+(3, 1, 3, 1),
+(4, 2, 1, 2),
 (5, 0, 2, 2),
-(6, 0, 3, 2),
+(6, 1, 3, 2),
 (7, 0, 1, 3),
-(8, 1, 2, 3),
-(9, 0, 3, 3);
+(8, 2, 2, 3),
+(9, 1, 3, 3);
