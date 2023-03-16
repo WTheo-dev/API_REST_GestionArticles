@@ -1,8 +1,8 @@
-INSERT INTO role (Id_Role, Description) VALUES
+INSERT INTO rôle (Id_Rôle, Description) VALUES
 (1, 'Moderator'),
 (2, 'Publisher');
 
-INSERT INTO utilisateur (Id_Utilisateur, nomUtilisateur, motdepasse, Id_Role) VALUES
+INSERT INTO utilisateur (Id_Utilisateur, nomUtilisateur, motdepasse, Id_Rôle) VALUES
 (1, 'Alice', 'password1', 1),
 (2, 'Jacques', 'password2', 2),
 (3, 'Louis', 'password3', 1),
@@ -18,13 +18,13 @@ INSERT INTO articles (Id_Articles, titre, Contenu, date_de_publication, Id_Utili
 (5, 'Comment faire du pain maison','Faire son propre pain maison est facile et amusant. Il suffit de suivre quelques étapes simples pour obtenir un pain frais et délicieux.', '2022-02-20', 5),
 (6, 'Les meilleurs films d action','Les films d action sont souvent remplis de cascades spectaculaires et d effets spéciaux incroyables. Voici une liste des meilleurs films d action à ne pas manquer. ', '2022-03-05', 6);
 
-INSERT INTO like_dislikearticles (Id_Like_DislikeArticles, type, Id_Utilisateur, Id_Articles) VALUES
-(1, 2, 1, 1),
-(2, 2, 2, 2),
-(3, 1, 3, 3),
-(4, 2, 1, 4),
-(5, 0, 2, 5),
-(6, 1, 3, 6),
-(7, 0, 1, 1),
-(8, 2, 2, 4),
-(9, 1, 3, 6);
+INSERT INTO apprécier (type, Id_Utilisateur, Id_Articles) VALUES
+(0, 1, 1),
+(0, 2, 2),
+(1, 3, 3),
+(0, 1, 4),
+(1, 2, 5),
+(1, 3, 6),
+(0, 1, 1),
+(1, 2, 4),
+(0, 3, 6);

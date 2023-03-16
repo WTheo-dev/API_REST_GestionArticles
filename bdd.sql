@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 10 mars 2023 à 10:36
+-- Généré le : jeu. 16 mars 2023 à 09:52
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `apprécier`
+--
+
+DROP TABLE IF EXISTS `apprécier`;
+CREATE TABLE IF NOT EXISTS `apprécier` (
+  `Id_Utilisateur` int NOT NULL,
+  `Id_Articles` int NOT NULL,
+  `type` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`Id_Utilisateur`,`Id_Articles`),
+  KEY `Id_Articles` (`Id_Articles`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `apprécier`
+--
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `articles`
 --
 
@@ -36,37 +55,29 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `Id_Utilisateur` int NOT NULL,
   PRIMARY KEY (`Id_Articles`),
   KEY `Id_Utilisateur` (`Id_Utilisateur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `articles`
+--
+
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `like_dislikearticles`
+-- Structure de la table `rôle`
 --
 
-DROP TABLE IF EXISTS `like_dislikearticles`;
-CREATE TABLE IF NOT EXISTS `like_dislikearticles` (
-  `Id_Like_DislikeArticles` int NOT NULL AUTO_INCREMENT,
-  `type` tinyInt(1) DEFAULT NULL, 
-  `Id_Utilisateur` int NOT NULL,
-  `Id_Articles` int NOT NULL,
-  PRIMARY KEY (`Id_Like_DislikeArticles`),
-  KEY `Id_Utilisateur` (`Id_Utilisateur`),
-  KEY `Id_Articles` (`Id_Articles`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `role`
---
-
-DROP TABLE IF EXISTS `role`;
-CREATE TABLE IF NOT EXISTS `role` (
-  `Id_Role` int NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `rôle`;
+CREATE TABLE IF NOT EXISTS `rôle` (
+  `Id_Rôle` int NOT NULL AUTO_INCREMENT,
   `Description` text,
-  PRIMARY KEY (`Id_Role`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`Id_Rôle`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `rôle`
+--
 
 -- --------------------------------------------------------
 
@@ -79,11 +90,14 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `Id_Utilisateur` int NOT NULL AUTO_INCREMENT,
   `nomUtilisateur` varchar(50) DEFAULT NULL,
   `motdepasse` varchar(50) DEFAULT NULL,
-  `Id_Role` int NOT NULL,
+  `Id_Rôle` int NOT NULL,
   PRIMARY KEY (`Id_Utilisateur`),
-  KEY `Id_Role` (`Id_Role`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-COMMIT;
+  KEY `Id_Rôle` (`Id_Rôle`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
