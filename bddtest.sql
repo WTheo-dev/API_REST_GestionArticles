@@ -18,13 +18,13 @@ INSERT INTO articles (Id_Articles, titre, Contenu, date_de_publication, Id_Utili
 (5, 'Comment faire du pain maison','Faire son propre pain maison est facile et amusant. Il suffit de suivre quelques étapes simples pour obtenir un pain frais et délicieux.', '2022-02-20', 5),
 (6, 'Les meilleurs films d action','Les films d action sont souvent remplis de cascades spectaculaires et d effets spéciaux incroyables. Voici une liste des meilleurs films d action à ne pas manquer. ', '2022-03-05', 6);
 
-INSERT INTO apprécier (type, Id_Utilisateur, Id_Articles) VALUES
-(0, 1, 1),
-(0, 2, 2),
-(1, 3, 3),
-(0, 1, 4),
-(1, 2, 5),
-(1, 3, 6),
-(0, 1, 1),
-(1, 2, 4),
-(0, 3, 6);
+INSERT INTO `apprécier` (`Id_Utilisateur`, `Id_Articles`, `type`) VALUES
+(1, 1, 0),
+(2, 2, 0),
+(3, 3, 1),
+(4, 4, 0),
+(5, 5, 1),
+(6, 6, 1),
+(1, 1, 0),
+(2, 4, 1),
+(3, 6, 0);
