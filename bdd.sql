@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `apprécier`
 --
 
-DROP TABLE IF EXISTS `apprécier`;
-CREATE TABLE IF NOT EXISTS `apprécier` (
+DROP TABLE IF EXISTS `apprecier`;
+CREATE TABLE IF NOT EXISTS `apprecier` (
   `Id_Utilisateur` int NOT NULL,
   `Id_Articles` int NOT NULL,
   `type` tinyint(1) DEFAULT NULL,
@@ -68,15 +68,15 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Structure de la table `rôle`
 --
 
-DROP TABLE IF EXISTS `rôle`;
-CREATE TABLE IF NOT EXISTS `rôle` (
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE IF NOT EXISTS `role` (
   `Id_Rôle` int NOT NULL AUTO_INCREMENT,
   `Description` text,
-  PRIMARY KEY (`Id_Rôle`)
+  PRIMARY KEY (`Id_Role`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `rôle`
+-- Déchargement des données de la table `role`
 --
 
 -- --------------------------------------------------------
@@ -90,9 +90,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `Id_Utilisateur` int NOT NULL AUTO_INCREMENT,
   `nomUtilisateur` varchar(50) DEFAULT NULL,
   `motdepasse` varchar(50) DEFAULT NULL,
-  `Id_Rôle` int NOT NULL,
+  `Id_Role` int NOT NULL,
   PRIMARY KEY (`Id_Utilisateur`),
-  KEY `Id_Rôle` (`Id_Rôle`)
+  KEY `Id_Rôle` (`Id_Role`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
