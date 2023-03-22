@@ -1,8 +1,8 @@
-INSERT INTO role (Id_Role, Description) VALUES
+INSERT INTO role (id_role, description) VALUES
 (1, 'Moderator'),
 (2, 'Publisher');
 
-INSERT INTO utilisateur (Id_Utilisateur, nomUtilisateur, motdepasse, Id_Role) VALUES
+INSERT INTO utilisateur (id_Utilisateur, nomutilisateur, motdepasse, id_Role) VALUES
 (1, 'Alice', 'password1', 1),
 (2, 'Jacques', 'password2', 2),
 (3, 'Louis', 'password3', 1),
@@ -10,7 +10,7 @@ INSERT INTO utilisateur (Id_Utilisateur, nomUtilisateur, motdepasse, Id_Role) VA
 (5, 'Louise', 'password5', 2),
 (6, 'Elise', 'password6', 2);
 
-INSERT INTO articles (Id_Articles, titre, Contenu, date_de_publication, Id_Utilisateur) VALUES
+INSERT INTO articles (id_articles, titre, contenu, date_de_publication, id_atilisateur) VALUES
 (1, 'Les avantages de PHP', 'PHP est un langage de programmation très populaire pour les sites web dynamiques. Voici ses avantages.', '2022-01-01', 1),
 (2, 'Comment creer un site web en HTML', 'Apprendre à creer un site web de base en HTML en quelques etapes simples.', '2022-02-02', 2),
 (3, 'Les meilleurs outils de developpement web', 'Decouvrez les outils de developpement web les plus populaires et leurs fonctionnalites cles.', '2022-03-03', 3),
@@ -18,7 +18,7 @@ INSERT INTO articles (Id_Articles, titre, Contenu, date_de_publication, Id_Utili
 (5, 'Comment faire du pain maison','Faire son propre pain maison est facile et amusant. Il suffit de suivre quelques etapes simples pour obtenir un pain frais et delicieux.', '2022-02-20', 5),
 (6, 'Les meilleurs films d action','Les films d action sont souvent remplis de cascades spectaculaires et d effets speciaux incroyables. Voici une liste des meilleurs films d action à ne pas manquer. ', '2022-03-05', 6);
 
-INSERT INTO apprecier (`Id_Utilisateur`, `Id_Articles`, `type`) VALUES
+INSERT INTO apprecier (id_utilisateur, id_articles, type) VALUES
 (1, 1, 1),
 (2, 1, 0),
 (3, 1, 1),

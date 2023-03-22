@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `apprecier`;
 CREATE TABLE IF NOT EXISTS `apprecier` (
-  `Id_Utilisateur` int NOT NULL,
-  `Id_Articles` int NOT NULL,
+  `id_utilisateur` int NOT NULL,
+  `id_articles` int NOT NULL,
   `type` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`Id_Utilisateur`,`Id_Articles`),
-  KEY `Id_Articles` (`Id_Articles`)
+  PRIMARY KEY (`id_utilisateur`,`id_articles`),
+  KEY `id_articles` (`id_articles`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -48,13 +48,13 @@ CREATE TABLE IF NOT EXISTS `apprecier` (
 
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
-  `Id_Articles` int NOT NULL AUTO_INCREMENT,
+  `id_articles` int NOT NULL AUTO_INCREMENT,
   `titre` varchar(50) DEFAULT NULL,
-  `Contenu` text,
+  `contenu` text,
   `date_de_publication` date DEFAULT NULL,
-  `Id_Utilisateur` int NOT NULL,
-  PRIMARY KEY (`Id_Articles`),
-  KEY `Id_Utilisateur` (`Id_Utilisateur`)
+  `id_utilisateur` int NOT NULL,
+  PRIMARY KEY (`id_articles`),
+  KEY `id_utilisateur` (`id_utilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -70,9 +70,9 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
-  `Id_Rôle` int NOT NULL AUTO_INCREMENT,
-  `Description` text,
-  PRIMARY KEY (`Id_Role`)
+  `id_role` int NOT NULL AUTO_INCREMENT,
+  `description` text,
+  PRIMARY KEY (`id_role`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -87,12 +87,12 @@ CREATE TABLE IF NOT EXISTS `role` (
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `Id_Utilisateur` int NOT NULL AUTO_INCREMENT,
-  `nomUtilisateur` varchar(50) DEFAULT NULL,
+  `id_utilisateur` int NOT NULL AUTO_INCREMENT,
+  `nomutilisateur` varchar(50) DEFAULT NULL,
   `motdepasse` varchar(50) DEFAULT NULL,
-  `Id_Role` int NOT NULL,
-  PRIMARY KEY (`Id_Utilisateur`),
-  KEY `Id_Rôle` (`Id_Role`)
+  `id_role` int NOT NULL,
+  PRIMARY KEY (`id_utilisateur`),
+  KEY `id_role` (`id_role`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --

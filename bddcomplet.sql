@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `apprecier`;
 CREATE TABLE IF NOT EXISTS `apprecier` (
-  `Id_Utilisateur` int NOT NULL,
-  `Id_Articles` int NOT NULL,
+  `id_utilisateur` int NOT NULL,
+  `id_articles` int NOT NULL,
   `type` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`Id_Utilisateur`,`Id_Articles`),
-  KEY `Id_Articles` (`Id_Articles`)
+  PRIMARY KEY (`id_utilisateur`,`id_articles`),
+  KEY `id_articles` (`id_articles`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dechargement des donnees de la table `apprecier`
 --
 
-INSERT INTO `apprecier` (`Id_Utilisateur`, `Id_Articles`, `type`) VALUES
+INSERT INTO `apprecier` (`id_utilisateur`, `id_articles`, `type`) VALUES
 (1, 1, 1),
 (2, 1, 0),
 (3, 1, 1),
@@ -87,20 +87,20 @@ INSERT INTO `apprecier` (`Id_Utilisateur`, `Id_Articles`, `type`) VALUES
 
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
-  `Id_Articles` int NOT NULL AUTO_INCREMENT,
+  `id_articles` int NOT NULL AUTO_INCREMENT,
   `titre` varchar(50) DEFAULT NULL,
-  `Contenu` text,
+  `contenu` text,
   `date_de_publication` date DEFAULT NULL,
-  `Id_Utilisateur` int NOT NULL,
-  PRIMARY KEY (`Id_Articles`),
-  KEY `Id_Utilisateur` (`Id_Utilisateur`)
+  `id_utilisateur` int NOT NULL,
+  PRIMARY KEY (`id_articles`),
+  KEY `id_utilisateur` (`id_utilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dechargement des donnees de la table `articles`
 --
 
-INSERT INTO `articles` (`Id_Articles`, `titre`, `Contenu`, `date_de_publication`, `Id_Utilisateur`) VALUES
+INSERT INTO `articles` (`id_articles`, `titre`, `contenu`, `date_de_publication`, `id_utilisateur`) VALUES
 (1, 'Les avantages de PHP', 'PHP est un langage de programmation très populaire pour les sites web dynamiques. Voici ses avantages.', '2022-01-01', 1),
 (2, 'Comment creer un site web en HTML', 'Apprendre à creer un site web de base en HTML en quelques etapes simples.', '2022-02-02', 2),
 (3, 'Les meilleurs outils de developpement web', 'Decouvrez les outils de developpement web les plus populaires et leurs fonctionnalites cles.', '2022-03-03', 3),
@@ -116,16 +116,16 @@ INSERT INTO `articles` (`Id_Articles`, `titre`, `Contenu`, `date_de_publication`
 
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
-  `Id_Role` int NOT NULL AUTO_INCREMENT,
-  `Description` text,
-  PRIMARY KEY (`Id_Role`)
+  `id_role` int NOT NULL AUTO_INCREMENT,
+  `description` text,
+  PRIMARY KEY (`id_role`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dechargement des donnees de la table `role`
 --
 
-INSERT INTO `role` (`Id_Role`, `Description`) VALUES
+INSERT INTO `role` (`id_role`, `description`) VALUES
 (1, 'Moderator'),
 (2, 'Publisher');
 
@@ -137,19 +137,19 @@ INSERT INTO `role` (`Id_Role`, `Description`) VALUES
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `Id_Utilisateur` int NOT NULL AUTO_INCREMENT,
-  `nomUtilisateur` varchar(50) DEFAULT NULL,
+  `id_utilisateur` int NOT NULL AUTO_INCREMENT,
+  `nomutilisateur` varchar(50) DEFAULT NULL,
   `motdepasse` varchar(50) DEFAULT NULL,
-  `Id_Role` int NOT NULL,
-  PRIMARY KEY (`Id_Utilisateur`),
-  KEY `Id_Role` (`Id_Role`)
+  `id_role` int NOT NULL,
+  PRIMARY KEY (`id_utilisateur`),
+  KEY `Id_Role` (`id_role`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dechargement des donnees de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`Id_Utilisateur`, `nomUtilisateur`, `motdepasse`, `Id_Role`) VALUES
+INSERT INTO `utilisateur` (`id_utilisateur`, `nomutilisateur`, `motdepasse`, `id_role`) VALUES
 (1, 'Alice', 'password1', 1),
 (2, 'Jacques', 'password2', 2),
 (3, 'Louis', 'password3', 1),
