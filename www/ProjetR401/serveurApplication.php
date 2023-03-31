@@ -75,7 +75,7 @@
                             $STATUS_MESSAGE = "Erreur de syntaxe";
                         }
                     }else{
-                        $RETURN_CODE = 400;
+                        $RETURN_CODE = 403;
                         $STATUS_MESSAGE = "Cet article n'est pas le votre";
                     }
                 }else{
