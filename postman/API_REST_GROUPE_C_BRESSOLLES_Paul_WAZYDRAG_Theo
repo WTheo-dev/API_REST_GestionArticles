@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ba57ad43-8dd2-4db5-9323-452bd482654b",
-		"name": "ProjetR401",
+		"_postman_id": "6d4e873c-3ecb-4800-bdf3-c0d6a94b7516",
+		"name": "GC_BRESSOLLES_WAZYDRAG_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25739320"
 	},
@@ -89,7 +89,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"login\" : \"jacques\",\r\n    \"password\" : \"password2\"\r\n}",
+					"raw": "{\r\n    \"login\" : \"Jacques\",\r\n    \"password\" : \"password2\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -199,10 +199,30 @@
 		{
 			"name": "Publisher supprimer article",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMiIsInV0aWxpc2F0ZXVyIjoiSmFjcXVlcyIsImV4cCI6MTY4MDI5NTUzMX0.CJ4Msm6yJjjKVk7C0XvrRyOrlTzT_k_UFp2wRoayZuM",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost/projetR401/serveurApplication.php?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"projetR401",
+						"serveurApplication.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
 				}
 			},
 			"response": []
@@ -304,19 +324,25 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMSIsInV0aWxpc2F0ZXVyIjoiQWxpY2UiLCJleHAiOjE2ODAyODAyMzF9.KBIGIoQ1Cpxt-humDldChKxGnKLGb1kYFTscdcFwYLE",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMSIsInV0aWxpc2F0ZXVyIjoiQWxpY2UiLCJleHAiOjE2ODAyOTU1ODJ9.5Zln4JpZPVMZeTiVy-sgQbYdZZRX5aZCrq_FvREzh_c",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost/ProjetR401/serveurApplication&id=14",
+					"raw": "http://localhost/ProjetR401/serveurApplication?id=16",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"ProjetR401",
-						"serveurApplication&id=14"
+						"serveurApplication"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "16"
+						}
 					]
 				}
 			},
