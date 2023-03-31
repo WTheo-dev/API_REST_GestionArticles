@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "ba57ad43-8dd2-4db5-9323-452bd482654b",
+		"name": "ProjetR401",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25739320"
+	},
+	"item": [
+		{
+			"name": "Non indentifié connexion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost/ProjetR401/serveurToken",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Non indentifié affichage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiIiwidXRpbGlzYXRldXIiOiIiLCJleHAiOjE2ODAyNzg2NDl9._FKac30fzDObTJe3b0Tc_VsnKnN2K5DJ7z3IZdHRl8Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/ProjetR401/serveurApplication",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher modification article",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMiIsInV0aWxpc2F0ZXVyIjoiamFjcXVlcyIsImV4cCI6MTY4MDI3OTc3MX0.FyMhgd49lB_TqrELVrPbL4J7d1nkP64Xu_0PWmv5vtQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\" : \"Test de la modification\",\r\n    \"contenu\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia desesqdsqsdqrunt mollit anim id est laborum.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/ProjetR401/serveurApplication&id=14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication&id=14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher connexion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"jacques\",\r\n    \"password\" : \"password2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/ProjetR401/serveurToken",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher affichage tous",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMiIsInV0aWxpc2F0ZXVyIjoiamFjcXVlcyIsImV4cCI6MTY4MDI3OTAyMX0.QjE_8T8nBuR_pjuHy9agfagTOY7Mm-csG1yTFunL2kU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/ProjetR401/serveurApplication",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher affichage soi",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMiIsInV0aWxpc2F0ZXVyIjoiamFjcXVlcyIsImV4cCI6MTY4MDI3OTA3NX0.wIDlGUooyoNZOPrraq_I9WO4ShQuIUpEsFwNTfXHD-k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/ProjetR401/serveurApplication?publisher=me",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication"
+					],
+					"query": [
+						{
+							"key": "publisher",
+							"value": "me"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher ajout article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMiIsInV0aWxpc2F0ZXVyIjoiamFjcXVlcyIsImV4cCI6MTY4MDI3OTc3MX0.FyMhgd49lB_TqrELVrPbL4J7d1nkP64Xu_0PWmv5vtQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\" : \"Test de la publication\",\r\n    \"contenu\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/ProjetR401/serveurApplication",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher supprimer article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publisher like",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiIiwidXRpbGlzYXRldXIiOiIiLCJleHAiOjE2ODAyODE3NjJ9.SwQsvyYt896jVQ-tLJ1MCPvSN-wIzgg_CupLlmEYYQQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"like\" : \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/ProjetR401/likeDislikeArticle?id=2",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"likeDislikeArticle"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Moderator connexion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"Alice\",\r\n    \"password\" : \"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/ProjetR401/serveurToken",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Moderator affichage tous",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMSIsInV0aWxpc2F0ZXVyIjoiQWxpY2UiLCJleHAiOjE2ODAyODAyMzF9.KBIGIoQ1Cpxt-humDldChKxGnKLGb1kYFTscdcFwYLE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/ProjetR401/serveurApplication",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Moderator supprimer article",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiMSIsInV0aWxpc2F0ZXVyIjoiQWxpY2UiLCJleHAiOjE2ODAyODAyMzF9.KBIGIoQ1Cpxt-humDldChKxGnKLGb1kYFTscdcFwYLE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/ProjetR401/serveurApplication&id=14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ProjetR401",
+						"serveurApplication&id=14"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
