@@ -26,7 +26,7 @@
  ```
  ```json
  {
-   "login" : "jacques",
+   "login" : "Jacques",
    "password" : "password2"
  }
  ```
